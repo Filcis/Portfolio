@@ -9,6 +9,9 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+	// Load the galleries by sortOrder
+view.query('projects', keystone.list('Project').model.find().sort('sortOrder'));
+
 	// Render the view
 	view.render('index');
 };
