@@ -49,6 +49,7 @@ keystone.set('nav', {
 	projects: ['projects','project-categories'],
 	enquiries: 'enquiries',
 	users: 'users',
+	about: 'about',
 });
 
 // Start Keystone to connect to your database and initialise the web server
