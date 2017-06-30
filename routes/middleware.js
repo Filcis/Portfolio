@@ -8,6 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+var keystone = require('keystone');
 
 
 /**
@@ -17,10 +18,22 @@ var _ = require('lodash');
 	the navigation in the header, you may wish to change this array
 	or replace it with your own templates / logic.
 */
+var projectSubmenu = '';
+
+exports.initSubmenu = function (req, res, next) {
+
+var ProjectCategories = keystone.list('ProjectCategory');
+ProjectCategories.model.find().exec(function(err, categories) {
+			projectSubmenu = categories;
+			console.log(projectSubmenu);
+	});
+	next();
+};
+
+
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		// { label: 'Home', key: 'home', href: '/' },
-		{ label: 'projekty', key: 'project', href: '/projekty' },
+		{ label: 'projekty', key: 'project', href: '/projekty', submenu: projectSubmenu},
 		{ label: 'o mnie', key: 'o_mnie', href: '/o_mnie' },
 		{ label: 'kontakt', key: 'contact', href: '/kontakt' },
 	];
