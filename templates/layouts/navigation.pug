@@ -15,7 +15,15 @@
 			.collapse.navbar-collapse
 				ul.nav.navbar-nav.navbar-left
 					each link in navLinks
+<<<<<<< HEAD
 						li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 						if link.subpages
 							each category in link.subpages
 								p=category
+=======
+						if link.submenu
+							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+								li= link.submenu
+						else
+							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+>>>>>>> c643df764027bb1908850a15cbb28fb152b98d7f
