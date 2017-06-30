@@ -2,7 +2,6 @@
 
 	//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 	//- ... or completely change this header to suit your design.
-
 	div(role="navigation").navbar.navbar-default
 		.container-fluid
 			.navbar-header
@@ -15,15 +14,12 @@
 			.collapse.navbar-collapse
 				ul.nav.navbar-nav.navbar-left
 					each link in navLinks
-<<<<<<< HEAD
-						li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						if link.subpages
-							each category in link.subpages
-								p=category
-=======
 						if link.submenu
-							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-								li= link.submenu
+							li(class='dropdown ')
+								a(class='dropdown-toggle',data-toggle="dropdown", role="button", href="#",  aria-expanded='false')= link.label
+								ul(class='dropdown-menu')
+									each element in link.submenu
+										li 
+											a(href='projekty/' + element.key)=element.name
 						else
 							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
->>>>>>> c643df764027bb1908850a15cbb28fb152b98d7f

@@ -17,28 +17,33 @@ var keystone = require ('keystone');
 	the navigation in the header, you may wish to change this array
 	or replace it with your own templates / logic.
 */
-var projectSubmenu = '';
-
-exports.initSubmenu = function (req, res, next) {
-
-var ProjectCategories = keystone.list('ProjectCategory');
-ProjectCategories.model.find().exec(function(err, categories) {
-			projectSubmenu = categories;
-			console.log(projectSubmenu);
-	});
-	next();
-};
+// exports.initSubmenu = function (req, res, next) {
+//
+//
+// 	next();
+// };
 
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'projekty', key: 'project', href: '/projekty', submenu: projectSubmenu},
-		{ label: 'o mnie', key: 'o_mnie', href: '/o_mnie' },
+		{ label: 'projekty', key: 'project', href: '/projekty'},
+		{ label: 'o mnie', key: 'about', href: '/o_mnie' },
 		{ label: 'kontakt', key: 'contact', href: '/kontakt' },
 	];
+
 	res.locals.user = req.user;
 	next();
 };
 
+exports.initSubmenu = function (req, res, next) {
+	// Add project categories as submenu of projects
+		keystone.list('ProjectCategory').model.find().exec(function(err, categories) {
+					res.locals.navLinks[0].submenu = categories;
+					console.log(res.locals.navLinks[0].submenu);
+			}).then( function() {
+					next();
+			});
+	// next();
+};
 
 /**
 	Fetches and clears the flashMessages before a view is rendered

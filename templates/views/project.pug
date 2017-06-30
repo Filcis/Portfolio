@@ -3,11 +3,12 @@ extends ../layouts/default
 block intro
 	.container
 		h1 Gallery
+		h1= test
 	
 block content
 	.container
 		if projects.length
-			each gallery in galleries
+			each project in projects
 				h2= project.name
 					if project.publishedDate
 						.pull-right.text-muted= project._.publishedDate.format('Do MMM YYYY')
