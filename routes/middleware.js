@@ -38,7 +38,6 @@ exports.initSubmenu = function (req, res, next) {
 	// Add project categories as submenu of projects
 		keystone.list('ProjectCategory').model.find().exec(function(err, categories) {
 					res.locals.navLinks[0].submenu = categories;
-					console.log(res.locals.navLinks[0].submenu);
 			}).then( function() {
 					next();
 			});

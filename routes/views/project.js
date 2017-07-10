@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var async = require('async');
 
 exports = module.exports = function (req, res) {
 
@@ -7,9 +8,45 @@ exports = module.exports = function (req, res) {
 
 	// Set locals
 	locals.section = 'project';
+	locals.category = req.params.category;
+	locals.data = {
+	categories: [],
+};
+	locals.project = 'test';
 
-	// Load the galleries by sortOrder
-	view.query('projects', keystone.list('Project').model.find().sort('sortOrder'));
+	// Load the current category filter
+	view.on('init', function (next) {
+
+		if (req.params.category) {
+			keystone.list('ProjectCategory').model.findOne({ key: locals.category }).exec(function (err, result) {
+				locals.categoryFilter = result;
+				next(err);
+			});
+		} else {
+			next();
+		}
+	});
+
+	// Load the posts
+	view.on('init', function (next) {
+
+		var q = keystone.list('Project').model.find()
+			.sort('-publishedDate')
+			.populate('categories');
+
+		if (locals.category) {
+			console.log(locals.categoryFilter);
+			q.where('categories').in([locals.categoryFilter._id]);
+		}
+
+		q.exec(function (err, results) {
+			locals.projects = results;
+			next(err);
+		});
+	});
+
+	// // Load the galleries by sortOrder
+	// view.query('projects', keystone.list('Project').model.find().populate('categories').sort('sortOrder'));
 
 	// Render the view
 	view.render('project');

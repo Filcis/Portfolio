@@ -1,5 +1,7 @@
 extends ../layouts/default
 block content
+	if category
+		h1=category
 	.container-fluid
 		if projects.length
 			.grid

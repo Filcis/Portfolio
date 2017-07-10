@@ -1,26 +1,14 @@
 extends ../layouts/default
-
-block intro
-	.container
-		h1 Gallery
-		h1= test
-	
 block content
-	.container
+	if category
+		h1= 'to jest widok kategorii ' + category 
+	.container-fluid
 		if projects.length
-			each project in projects
-				h2= project.name
-					if project.publishedDate
-						.pull-right.text-muted= project._.publishedDate.format('Do MMM YYYY')
-				
-				.row.gallery-images
+			.grid
+				each project, index in projects
 					if project.heroImage.exists
-						.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded
-						.col-sm-8.col-md-8: .row
-							each image in project.images
-								.col-xs-4.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
+						.col-sm-4.col-md-4.gallery-image.grid-item: img(src=project._.heroImage.limit(900,900)).img-rounded
 					else
-						each image in project.images
-							.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
+						.col-sm-4.col-md-4.gallery-image : p=project.name
 		else
-			h3.text-muted There are no image galleries yet.
+			h3.text-muted Nie ma jeszcze projektów w tej kategorii.

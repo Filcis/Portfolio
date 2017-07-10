@@ -8,9 +8,10 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
+	locals.category = req.params.category;
 
 	// Load the galleries by sortOrder
-view.query('projects', keystone.list('Project').model.find().sort('sortOrder'));
+	view.query('projects', keystone.list('Project').model.find().sort('sortOrder'));
 
 	// Render the view
 	view.render('index');

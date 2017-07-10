@@ -20,6 +20,6 @@
 								ul(class='dropdown-menu')
 									each element in link.submenu
 										li 
-											a(href='projekty/' + element.key)=element.name
+											a(href='/projekty/' + element.key)=element.name
 						else
 							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
