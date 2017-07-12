@@ -1,7 +1,7 @@
 include ../mixins/flash-messages
 
 doctype html
-html
+html(class="no-js")
 
 	//- HTML HEADER
 	head
@@ -14,6 +14,7 @@ html
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
+		script(src='/js/modernizr/modernizr.js')
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
