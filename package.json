@@ -19,6 +19,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "scss": "node-sass -w public/styles/ -o public/styles",
     "start": "node keystone.js"
   },
   "engines": {
