@@ -1,6 +1,26 @@
-#header {
-	padding: 30px;
+html {
+	height: 100%;
 }
+
+body {
+	height: 100%;
+}
+
+.page-wrapper {
+	position: relative;
+	 min-height: 100%;
+}
+
+#header {
+	box-sizing: border-box;
+	padding: 30px;
+	@include mq('tablet-wide') {
+		float: left;
+		width: 14%;
+		height: 100%;
+	}
+}
+
 
 #footer {
 	margin-top: 30px;
@@ -10,7 +30,10 @@
 }
 
 .content-wrapper {
-	width: 100%;
+	@include mq('tablet-wide') {
+		margin-left: 14%;
+		padding: 100px 25px;
+	}
 }
 
 // Grid Masonry dla projektów
