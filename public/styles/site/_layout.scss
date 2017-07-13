@@ -1,5 +1,10 @@
 html {
+	box-sizing: border-box;
 	height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -12,10 +17,11 @@ body {
 }
 
 #header {
-	box-sizing: border-box;
 	padding: 30px;
 	@include mq('tablet-wide') {
-		float: left;
+		position: fixed;
+		left: 0;
+		top: 0;
 		width: 14%;
 		height: 100%;
 	}
@@ -34,6 +40,8 @@ body {
 		margin-left: 14%;
 		padding: 100px 25px;
 	}
+	// background-color: #383c4f;
+	min-height: 100%;
 }
 
 // Grid Masonry dla projektów
@@ -47,7 +55,6 @@ body {
 .grid-item {
 	padding: 15px;
 	width: 100%;
-	box-sizing: border-box;
 	@include mq('phone-wide') {
 			width: 50%;
 		}
@@ -60,6 +67,29 @@ body {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+.project_description_container {
+	padding: 1em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f1f1f3;
+	border: 1px solid #eee;
+	display: none;
+}
+
+.project_categories {
+	font-size: 0.7em;
+	color: #aaa;
+}
+
+.grid-item:hover {
+	.project_description_container {
+		display: block;
+	}
 }
 
 .navbar-toggle {

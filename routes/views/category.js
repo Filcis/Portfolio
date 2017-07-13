@@ -49,6 +49,6 @@ exports = module.exports = function (req, res) {
 	// view.query('projects', keystone.list('Project').model.find().populate('categories').sort('sortOrder'));
 
 	// Render the view
-	view.render('project');
+	view.render('category');
 
 };

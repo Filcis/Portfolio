@@ -7,7 +7,14 @@ block content
 			.grid
 				each project, index in projects
 					if project.heroImage.exists
-						.grid-item: img(src=project._.heroImage.limit(900,900)).img-rounded
+						.grid-item
+							a(href='/projekt/' + project.key)
+								img(src=project._.heroImage.limit(900,900)).img-rounded
+								.project_description_container
+									each category in project.categories
+										span.project_categories=category.name + ' '
+									h3.project_name= project.name
+									p.project_description= project.shortDescription
 					else
 						.grid-item : p=project.name
 		else

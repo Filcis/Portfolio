@@ -1,5 +1,6 @@
 #header
-	h1.logo(href='/') Filip Ciślak
+	a(href='/')
+		h1.logo Filip Ciślak
 	nav(role="navigation").navbar.navbar-default
 		.navbar-header
 			button.navbar-toggle(type='button')
@@ -16,6 +17,6 @@
 							ul(class='dropdown-menu')
 								each element in link.submenu
 									li 
-										a(href='/projekty/' + element.key)=element.name
+										a(href='/kategorie/' + element.key)=element.name
 					else
 						li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
