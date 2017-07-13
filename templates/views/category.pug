@@ -7,8 +7,15 @@ block content
 			.grid
 				each project, index in projects
 					if project.heroImage.exists
-						.col-sm-4.col-md-4.gallery-image.grid-item: img(src=project._.heroImage.limit(900,900)).img-rounded
+						.grid-item
+							a(href='/projekt/' + project.key)
+								img(src=project._.heroImage.limit(900,900)).img-rounded
+								.project_description_container
+									each category in project.categories
+										span.project_categories=category.name + ' '
+									h3.project_name= project.name
+									p.project_description= project.shortDescription
 					else
-						.col-sm-4.col-md-4.gallery-image : p=project.name
+						.grid-item : p=project.name
 		else
-			h3.text-muted Nie ma jeszcze projektów w tej kategorii.
+			h3.text-muted There are no image galleries yet.

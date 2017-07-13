@@ -1,0 +1,4 @@
+extends ../layouts/default
+block content
+  h1= project.name
+  img(src=project._.heroImage.limit(900,900)).img-rounded
