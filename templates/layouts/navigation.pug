@@ -1,25 +1,21 @@
-#header: .container-fluid
-
-	//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-	//- ... or completely change this header to suit your design.
-	div(role="navigation").navbar.navbar-default
-		.container-fluid
-			.navbar-header
-				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				a.navbar-brand(href='/') Fc_portfolio
-			.collapse.navbar-collapse
-				ul.nav.navbar-nav.navbar-left
-					each link in navLinks
-						if link.submenu
-							li(class='dropdown ')
-								a(class='dropdown-toggle',data-toggle="dropdown", role="button", href="#",  aria-expanded='false')= link.label
-								ul(class='dropdown-menu')
-									each element in link.submenu
-										li 
-											a(href='/projekty/' + element.key)=element.name
-						else
-							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+#header
+	a.navbar-brand(href='/') Filip Ciślak
+	nav(role="navigation").navbar.navbar-default
+		.navbar-header
+			button.navbar-toggle(type='button')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+		.collapse.navbar-collapse
+			ul.nav.navbar-nav.navbar-left
+				each link in navLinks
+					if link.submenu
+						li(class='dropdown ')
+							a(class='dropdown-toggle',data-toggle="dropdown", role="button", href="#",  aria-expanded='false')= link.label
+							ul(class='dropdown-menu')
+								each element in link.submenu
+									li 
+										a(href='/projekty/' + element.key)=element.name
+					else
+						li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label

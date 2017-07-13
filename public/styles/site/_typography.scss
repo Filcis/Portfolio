@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Roboto Slab', sans-serif;
+  text-decoration: none;
+  color: #030303;
+  font-size: 3em;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  li {
+    margin-bottom: 0.5em;
+  }
+  li a {
+    color: #999;
+    text-decoration: none;
+    &:before {
+      content: "/";
+    }
+  }
+  .dropdown ul {
+    display: none;
+  }
+}
