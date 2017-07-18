@@ -445,12 +445,25 @@ body {
   color: #777777; }
 
 .content-wrapper {
+  background-color: #f1f1f3;
   min-height: 100%; }
 
 @media only screen and (min-width: 1024px) {
   .content-wrapper {
     margin-left: 14%;
-    padding: 100px 25px; } }
+    padding: 30px 25px; } }
+
+main {
+  max-width: 900px;
+  margin-left: 4em; }
+
+main img {
+  width: 90%;
+  max-width: 800px;
+  margin: 5%;
+  padding: 1em;
+  background-color: #fff;
+  height: auto; }
 
 .grid {
   display: flex;
@@ -474,7 +487,7 @@ body {
   max-width: 100%;
   height: auto; }
 
-.project_description_container {
+.project_excerpt_container {
   padding: 1em;
   position: absolute;
   top: 0;
