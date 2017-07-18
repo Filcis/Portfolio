@@ -1,4 +1,10 @@
 extends ../layouts/default
 block content
-  h1= project.name
-  img(src=project._.heroImage.limit(900,900)).img-rounded
+  main.project
+    if project
+      div
+        h1= project.name
+        section!= project.description
+      img.heroImage(src=project._.heroImage.limit(1600,1400)).img-rounded
+    else
+      h1 nie ma takiego projektu
