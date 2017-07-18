@@ -9,7 +9,7 @@ block content
 					if project.heroImage.exists
 						.grid-item
 							a(href='/projekt/' + project.key)
-								img(src=project._.heroImage.limit(900,900)).img-rounded
+								img(src=project._.heroImage.limit(900,900) alt=project.name).img-rounded
 								.project_excerpt_container
 									each category in project.categories
 										span.project_categories=category.name + ' '
