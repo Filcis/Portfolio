@@ -9,6 +9,6 @@ block content
       if project.images.length
         .project_gallery
           each img, index in project.images
-            img(src=img.limit(1200,1200) alt=project.name + ' obrazek ' + (index + 1)).img-rounded
+            img(src=img.limit(1200,1200) alt=project.name title='obrazek ' + (index + 1)).img-rounded
     else
       h1 nie ma takiego projektu
