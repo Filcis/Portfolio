@@ -16,7 +16,12 @@ view.on('init', function(next) {
   console.log(req.params.projekt);
   var q = keystone.list('Project').model.findOne({key: req.params.projekt}).populate('categories');
   q.exec(function(err, results) {
-  locals.project = results;
+		if (err) {
+			console.log(err);
+		}
+		else {
+			locals.project = results;
+		}
   next(err);
   });
 });
