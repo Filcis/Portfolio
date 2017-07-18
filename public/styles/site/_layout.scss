@@ -7,6 +7,12 @@ html {
   box-sizing: inherit;
 }
 
+.clearfix {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 body {
 	height: 100%;
 }
@@ -16,15 +22,20 @@ body {
 	 min-height: 100%;
 }
 
-#header {
+.left_sidebar {
 	padding: 30px;
 	@include mq('tablet-wide') {
+		padding: 3em;
 		position: fixed;
 		left: 0;
 		top: 0;
 		width: 14%;
 		height: 100%;
 	}
+}
+
+#header{
+	width: 100%;
 }
 
 
@@ -68,6 +79,7 @@ main {
 .grid-item {
 	padding: 15px;
 	width: 100%;
+	position: relative;
 	@include mq('phone-wide') {
 			width: 50%;
 		}
@@ -106,6 +118,11 @@ main {
 	}
 }
 
-.navbar-toggle {
-	display: none;
+.sr-only {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
 }

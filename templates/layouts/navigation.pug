@@ -1,20 +1,21 @@
-#header
-	a(href='/')
-		h1.logo Filip Ciślak
-	nav(role="navigation").navbar.navbar-default
-		.navbar-header
-			button.navbar-toggle(type='button')
+.left_sidebar
+	#header.clearfix
+		a.logo(href='/')
+			h1 Filip Ciślak
+		button#toggleMenuButton.navbar-toggle.hamburger(type='button')
 				span.sr-only Toggle navigation
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
+				span.hamburger-box
+					span.hamburger-inner
+	nav(role="navigation" id="main_nav").navbar.navbar-default
 		.collapse.navbar-collapse
 			ul.nav.navbar-nav.navbar-left
 				each link in navLinks
 					if link.submenu
-						li(class='dropdown ')
-							a(class='dropdown-toggle',data-toggle="dropdown", role="button", href="/",  aria-expanded='false')= link.label
-							ul(class='dropdown-menu')
+						li(class='dropdown')
+							a(class='dropdown_toggle', href="#", aria-expanded='false')
+								span(class='arrow_right')
+								p=link.label
+							ul(class='dropdown_menu')
 								each element in link.submenu
 									li 
 										a(href='/kategorie/' + element.key)=element.name

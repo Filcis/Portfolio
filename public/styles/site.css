@@ -390,14 +390,73 @@ template {
 [hidden] {
   display: none; }
 
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+
+.hamburger:hover {
+  opacity: 0.7; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; }
+
+.hamburger-inner::before {
+  top: -10px; }
+
+.hamburger-inner::after {
+  bottom: -10px; }
+
 body {
   font-family: 'Roboto', sans-serif; }
 
 .logo {
+  float: left;
   font-family: 'Roboto Slab', sans-serif;
   text-decoration: none;
-  color: #030303;
-  font-size: 1.3em; }
+  color: #030303; }
+
+.logo h1 {
+  font-size: 1.8em; }
 
 nav ul {
   padding: 0;
@@ -410,8 +469,51 @@ nav ul li a {
   color: #999;
   text-decoration: none; }
 
-nav ul li a:before {
-  content: "/"; }
+nav ul li a:hover {
+  color: #444; }
+
+.js .dropdown_menu {
+  max-height: 0;
+  transition: 0.6s;
+  overflow: hidden;
+  margin-left: 1em; }
+
+.dropdown_menu.open {
+  max-height: 300px; }
+
+.dropdown_toggle {
+  position: relative; }
+
+.dropdown_toggle p {
+  margin: 0; }
+
+.navbar-toggle {
+  float: right; }
+
+@media only screen and (min-width: 1024px) {
+  .navbar-toggle {
+    display: none; } }
+
+.navbar-collapse.collapse {
+  display: none; }
+
+@media only screen and (min-width: 1024px) {
+  .navbar-collapse.collapse {
+    display: block; } }
+
+.arrow_right {
+  position: absolute;
+  top: 0.3em;
+  left: -0.7em;
+  width: 0;
+  height: 0;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid #999;
+  transition: 0.2s all; }
+
+.arrow_right.open {
+  transform: rotate(90deg); }
 
 html {
   box-sizing: border-box;
@@ -420,6 +522,11 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
 body {
   height: 100%; }
 
@@ -427,16 +534,20 @@ body {
   position: relative;
   min-height: 100%; }
 
-#header {
+.left_sidebar {
   padding: 30px; }
 
 @media only screen and (min-width: 1024px) {
-  #header {
+  .left_sidebar {
+    padding: 3em;
     position: fixed;
     left: 0;
     top: 0;
     width: 14%;
     height: 100%; } }
+
+#header {
+  width: 100%; }
 
 #footer {
   margin-top: 30px;
@@ -472,7 +583,8 @@ main img {
 
 .grid-item {
   padding: 15px;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 @media only screen and (min-width: 480px) {
   .grid-item {
@@ -506,5 +618,10 @@ main img {
 .grid-item:hover .project_excerpt_container {
   display: block; }
 
-.navbar-toggle {
-  display: none; }
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
