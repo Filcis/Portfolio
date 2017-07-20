@@ -552,7 +552,7 @@ body {
   color: #777777; }
 
 .content-wrapper {
-  background-color: #f1f1f3;
+  background-color: #b1b1b3;
   min-height: 100%; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
@@ -576,7 +576,8 @@ main {
   flex-wrap: wrap; }
 
 .grid-item {
-  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
   width: 100%;
   position: relative; }
   @media only screen and (min-width: 480px) {
@@ -584,7 +585,7 @@ main {
       width: 50%; } }
   @media only screen and (min-width: 1024px) {
     .grid-item {
-      width: 25%; } }
+      width: 23%; } }
 
 .grid-item img {
   display: block;
@@ -593,6 +594,7 @@ main {
 
 .project_excerpt_container {
   padding: 1em;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;

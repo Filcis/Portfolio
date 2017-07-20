@@ -6,7 +6,8 @@
     var msnry = new Masonry(elem, {
       // options
       itemSelector: '.grid-item',
-      percentPosition: true
+      percentPosition: true,
+      gutter: 15
     });
   };
 
