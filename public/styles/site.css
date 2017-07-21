@@ -552,7 +552,7 @@ body {
   color: #777777; }
 
 .content-wrapper {
-  background-color: #b1b1b3;
+  background-color: #fff;
   min-height: 100%; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
@@ -570,14 +570,14 @@ main {
     background-color: #fff;
     height: auto; }
 
-.grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
+@media only screen and (min-width: 1440px) {
+  .grid {
+    margin-top: 3em; } }
 
 .grid-item {
   box-sizing: border-box;
   margin-bottom: 15px;
+  border: 1px solid lightgray;
   width: 100%;
   position: relative; }
   @media only screen and (min-width: 480px) {
@@ -585,7 +585,10 @@ main {
       width: 50%; } }
   @media only screen and (min-width: 1024px) {
     .grid-item {
-      width: 23%; } }
+      width: 48%; } }
+  @media only screen and (min-width: 1440px) {
+    .grid-item {
+      width: 32%; } }
 
 .grid-item img {
   display: block;
@@ -593,36 +596,54 @@ main {
   height: auto; }
 
 .project_excerpt_container {
-  padding: 1em;
+  padding: 2em;
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #383c4f;
-  border: 1px solid #eee;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s ease-out; }
+  transition: visibility 0.25s, opacity 0.25s ease-out; }
   .project_excerpt_container > * {
-    color: #ddd; }
-  .project_excerpt_container h3 {
-    font-weight: normal;
-    font-family: 'Roboto Slab';
-    font-size: 2em;
-    line-height: 1.2; }
-  .project_excerpt_container .project_description {
-    font-size: 0.9em;
-    position: absolute;
-    bottom: 0;
-    color: #ddd; }
-  .project_excerpt_container .project_categories {
-    font-size: 0.9em;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    color: #ddd; }
+    color: #777; }
+
+.project_name {
+  font-weight: normal;
+  font-family: 'Roboto Slab';
+  display: inline;
+  font-size: 2em;
+  line-height: 1.5;
+  padding-bottom: 0.35em;
+  margin-top: 3em;
+  border-bottom: 2px solid #e15340; }
+
+.cssgradients .project_name {
+  background-image: linear-gradient(to right, #e15340 100%, transparent 0%);
+  background-position: 0 1.35em;
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  transition: background-size 0.45s ease;
+  border-bottom: 0; }
+
+.cssgradients .grid-item:hover .project_name {
+  background-size: 100% 3px; }
+
+.project_description {
+  font-size: 0.9em;
+  position: absolute;
+  bottom: 0;
+  color: #777; }
+
+.project_categories {
+  font-size: 0.9em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  color: #777; }
 
 .grid-item:hover .project_excerpt_container {
   visibility: visible;
