@@ -11,11 +11,11 @@
 			ul.nav.navbar-nav.navbar-left
 				each link in navLinks
 					if link.submenu
-						li(class='dropdown')
+						li(class= 'dropdown')
 							a(class='dropdown_toggle', href="#", aria-expanded='false')
 								span(class='arrow_right')
 								p=link.label
-							ul(class='dropdown_menu')
+							ul(class='dropdown_menu' + (section == 'project' ? ' open' : ''))
 								each element in link.submenu
 									li 
 										a(href='/kategorie/' + element.key)=element.name
