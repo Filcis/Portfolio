@@ -2,7 +2,7 @@ extends ../layouts/default
 block content
   main.project
     if project
-      div
+      header
         h1.project_name= project.name
         section!= project.description
       img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded

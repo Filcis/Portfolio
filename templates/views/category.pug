@@ -1,7 +1,8 @@
 extends ../layouts/default
 block content
 	if category
-		h1.category_name  kategoria #[span.category_highlight=category]
+		header
+			h1.category_name  kategoria #[span.category_highlight=category]
 	.container-fluid
 		if projects.length
 			.grid
