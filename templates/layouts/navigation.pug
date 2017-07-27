@@ -1,7 +1,7 @@
-.left_sidebar
-	#header.clearfix
+header.left_sidebar
+	.logo_wrapper.clearfix
 		a.logo(href='/')
-			img(src='/images/logo_test.svg')
+			img(src='/images/logo_test.svg' alt='logo' title='Filip Ciślak')
 		button#toggleMenuButton.navbar-toggle.hamburger(type='button')
 				span.sr-only Toggle navigation
 				span.hamburger-box
@@ -12,9 +12,7 @@
 				each link in navLinks
 					if link.submenu
 						li(class= 'dropdown')
-							a(class='dropdown_toggle', href="#", aria-expanded='false')
-								span(class='arrow_right')
-								p=link.label
+							a(class='dropdown_toggle', href="#", aria-expanded='false')=link.label
 							ul(class='dropdown_menu' + (section == 'project' ? ' open' : ''))
 								each element in link.submenu
 									li 
