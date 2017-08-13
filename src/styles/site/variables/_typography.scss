@@ -1,0 +1,18 @@
+//FONT FAMILIES
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+$roboto_slab: 'Roboto Slab', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+$headline_font: $roboto_slab;
+$body_font: $roboto;
+
+//MODULAR SCALE
+
+@import '../modularscale/modularscale';
+
+$modularscale: (
+  base: 1em,
+  ratio: 1.25
+);

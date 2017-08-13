@@ -1,0 +1,178 @@
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.clearfix {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body {
+	height: 100%;
+}
+
+.page-wrapper {
+	position: relative;
+	 min-height: 100%;
+}
+
+.left_sidebar {
+	@include mq('tablet-wide') {
+		padding-top: 3em;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 12%;
+		height: 100%;
+		background-color: $sidebar_background;
+	}
+}
+
+header{
+	width: 100%;
+}
+
+.logo_wrapper {
+	margin: 0 auto;
+}
+
+#footer {
+	margin-top: 30px;
+	border-top: 1px solid #eeeeee;
+	padding-top: 30px;
+	color: #777777;
+}
+
+.content-wrapper {
+	@include mq('tablet-wide') {
+		margin-left: 12%;
+		padding: 3em 7em 2em 7em;
+	}
+	min-height: 100%;
+	background-color: $page_background;
+}
+
+main {
+	max-width: 900px;
+	img {
+		width: 90%;
+		max-width: 800px;
+		margin: 5%;
+		padding: 1em;
+		background-color: #fff;
+		height: auto;
+	}
+}
+
+// Grid Masonry dla projektów
+
+.grid {
+	@include mq('desktop-wide') {
+      margin-top: 3em;
+    }
+}
+
+.grid-sizer {
+	width: 50%;
+	@include mq('desktop-wide') { width: 25%; }
+}
+
+.flexbox .grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.grid-item {
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	padding: 1em;
+	// position: relative;
+	@include mq('phone-wide') {
+			width: 50%;
+		}
+	@include mq('desktop-wide') {
+      width: 25%;
+    }
+}
+
+.flexbox .grid-item {
+	flex-grow: 1;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.project_info_container {
+	padding: 2em;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s, opacity 0.25s ease-out;
+	& > * {
+		color: #777;
+	}
+}
+
+.project_info_container .project_name {
+	padding-bottom: 0.35em;
+	display: inline;
+}
+
+.cssgradients .project_info_container .project_name {
+	background-image: linear-gradient(to right,  $underline 100%, transparent 0%);
+	background-position: 0 1.35em;
+	background-repeat: no-repeat;
+	background-size: 0% 3px;
+	transition: background-size 0.45s ease;
+	border-bottom: 0;
+}
+
+.cssgradients .grid-item:hover .project_name {
+	background-size: 100% 3px;
+}
+
+.project_description {
+	font-size: 0.9em;
+	position: absolute;
+	bottom: 0;
+	color: #777;
+}
+.project_categories {
+	font-size: 0.9em;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	color: #777;
+}
+
+.grid-item:hover {
+	.project_info_container {
+	visibility: visible;
+  opacity: 1;
+	}
+}
+
+.sr-only {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}

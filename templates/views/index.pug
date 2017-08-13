@@ -5,6 +5,7 @@ block content
 	.container
 		if projects.length
 			.grid
+				.grid-sizer
 				each project, index in projects
 					if project.heroImage.exists
 						.grid-item

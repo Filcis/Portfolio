@@ -447,15 +447,14 @@ template {
   bottom: -10px; }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6; }
 
 a {
-  color: #555;
+  color: #2d2d2d;
   text-decoration: none; }
 
 .logo {
-  margin-left: 1em;
   display: block; }
   .logo img {
     width: 4em;
@@ -463,22 +462,30 @@ a {
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
-  font-family: 'Roboto Slab', sans-serif; }
+  font-family: "Roboto Slab", sans-serif; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 1.95313em; }
+
+h2 {
+  font-size: 1.5625em; }
+
+h3 {
+  font-size: 1.25em; }
+
+p, a {
+  font-size: 1em; }
 
 .page_name, .category_name {
-  font-size: 2em;
-  color: #447; }
+  color: #445;
+  display: inline-block; }
 
 .project_name {
   display: inline-block;
-  font-size: 2em;
   line-height: 1.5; }
 
 .project_name {
-  border-bottom: 2px solid #e15340; }
+  border-bottom: 2px solid #8C271E; }
 
 .category_highlight {
   border-left: 1px solid #aaa;
@@ -488,18 +495,30 @@ nav ul {
   padding: 0;
   list-style: none; }
   nav ul li {
-    padding-top: 1em; }
+    border-bottom: 1px solid #aaa; }
+    nav ul li ul li {
+      border-bottom: none; }
+      nav ul li ul li:first-child {
+        border-top: 1px solid #aaa; }
+      nav ul li ul li a {
+        font-size: 0.9em;
+        padding-top: 0.8em;
+        padding-bottom: 0.8em; }
   nav ul li a {
-    color: #999;
+    display: block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #444;
+    padding-left: 1em;
     text-decoration: none; }
     nav ul li a:hover {
-      color: #444; }
+      color: #666; }
 
 .js .dropdown_menu {
   max-height: 0;
   transition: 0.6s;
   overflow: hidden;
-  margin-left: 1em; }
+  background-color: #ced9e3; }
 
 .dropdown_menu.open {
   max-height: 300px; }
@@ -521,19 +540,6 @@ nav ul {
     .navbar-collapse.collapse {
       display: block; } }
 
-.arrow_right {
-  position: absolute;
-  top: 0.3em;
-  left: -0.7em;
-  width: 0;
-  height: 0;
-  border-top: 0.3em solid transparent;
-  border-bottom: 0.3em solid transparent;
-  border-left: 0.3em solid #999;
-  transition: 0.2s all; }
-  .arrow_right.open {
-    transform: rotate(90deg); }
-
 html {
   box-sizing: border-box;
   height: 100%; }
@@ -553,19 +559,21 @@ body {
   position: relative;
   min-height: 100%; }
 
-.left_sidebar {
-  padding: 30px; }
-  @media only screen and (min-width: 1024px) {
-    .left_sidebar {
-      padding: 3em 2em;
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 12%;
-      height: 100%; } }
+@media only screen and (min-width: 1024px) {
+  .left_sidebar {
+    padding-top: 3em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #f3f2f2; } }
 
 header {
   width: 100%; }
+
+.logo_wrapper {
+  margin: 0 auto; }
 
 #footer {
   margin-top: 30px;
@@ -574,7 +582,8 @@ header {
   color: #777777; }
 
 .content-wrapper {
-  min-height: 100%; }
+  min-height: 100%;
+  background-color: #FFF; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
       margin-left: 12%;
@@ -594,22 +603,30 @@ main {
   .grid {
     margin-top: 3em; } }
 
+.grid-sizer {
+  width: 50%; }
+  @media only screen and (min-width: 1440px) {
+    .grid-sizer {
+      width: 25%; } }
+
+.flexbox .grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
 .grid-item {
   box-sizing: border-box;
   margin-bottom: 15px;
-  border: 1px solid lightgray;
-  width: 100%;
-  position: relative; }
+  padding: 1em; }
   @media only screen and (min-width: 480px) {
     .grid-item {
       width: 50%; } }
-  @media only screen and (min-width: 1024px) {
-    .grid-item {
-      width: 48%; } }
   @media only screen and (min-width: 1440px) {
     .grid-item {
-      width: 32%;
-      width: calc(100%/3 - 10px); } }
+      width: 25%; } }
+
+.flexbox .grid-item {
+  flex-grow: 1; }
 
 .grid-item img {
   display: block;
@@ -636,7 +653,7 @@ main {
   display: inline; }
 
 .cssgradients .project_info_container .project_name {
-  background-image: linear-gradient(to right, #e15340 100%, transparent 0%);
+  background-image: linear-gradient(to right, #8C271E 100%, transparent 0%);
   background-position: 0 1.35em;
   background-repeat: no-repeat;
   background-size: 0% 3px;

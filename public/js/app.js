@@ -1,15 +1,30 @@
 'use strict';
 
 (function () {
+
+  /**
+   * Returns a random integer between min (inclusive) and max (inclusive)
+   * Using Math.round() will give you a non-uniform distribution!
+   */
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // MASONRY
   window.onload = function () {
-    var elem = document.querySelector('.grid');
-    var msnry = new Masonry(elem, {
+    var grid = document.querySelector('.grid');
+
+    var msnry = new Masonry(grid, {
       // options
       itemSelector: '.grid-item',
       percentPosition: true,
-      gutter: 15
+      columnWidth: '.grid-sizer'
+      // fitWidth: true,
+      // gutter: 50
     });
   };
+
+  //NAVIGATION
 
   var mainNavigation = document.getElementById('main_nav');
   var submenuToggle = mainNavigation.querySelectorAll('.dropdown_toggle');
