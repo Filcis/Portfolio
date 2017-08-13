@@ -1,11 +1,13 @@
 $old_tomato : #8C271E;
+$tomato : #e15340;
 $ivory: #CFCBCA;
 $heban: #22181C;
 $gray: #2d2d2d;
+$coldgray: #f4f7f6;
 $white: #FFF;
 
-$underline: $old_tomato;
+$underline: $tomato;
 $links: #2d2d2d;
-$page_background: $white;
-$sidebar_background: lighten($ivory, 15%);
+$page_background: $coldgray;
+$sidebar_background: $white;
 $border: $ivory;

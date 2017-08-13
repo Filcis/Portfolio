@@ -485,7 +485,7 @@ p, a {
   line-height: 1.5; }
 
 .project_name {
-  border-bottom: 2px solid #8C271E; }
+  border-bottom: 2px solid #e15340; }
 
 .category_highlight {
   border-left: 1px solid #aaa;
@@ -567,7 +567,7 @@ body {
     top: 0;
     width: 12%;
     height: 100%;
-    background-color: #f3f2f2; } }
+    background-color: #FFF; } }
 
 header {
   width: 100%; }
@@ -583,7 +583,7 @@ header {
 
 .content-wrapper {
   min-height: 100%;
-  background-color: #FFF; }
+  background-color: #f4f7f6; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
       margin-left: 12%;
@@ -653,7 +653,7 @@ main {
   display: inline; }
 
 .cssgradients .project_info_container .project_name {
-  background-image: linear-gradient(to right, #8C271E 100%, transparent 0%);
+  background-image: linear-gradient(to right, #e15340 100%, transparent 0%);
   background-position: 0 1.35em;
   background-repeat: no-repeat;
   background-size: 0% 3px;
