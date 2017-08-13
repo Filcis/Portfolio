@@ -1,12 +1,17 @@
 //FONT FAMILIES
 
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,900&subset=latin-ext');
 
 $roboto_slab: 'Roboto Slab', sans-serif;
 $roboto: 'Roboto', sans-serif;
+$titilium: 'Titillium Web', sans-serif;
 
-$headline_font: $roboto_slab;
+$headline_font: $roboto;
+// $headline_font: $roboto_slab;
 $body_font: $roboto;
+
+$headline_weight: bold;
 
 //MODULAR SCALE
 
@@ -16,3 +21,5 @@ $modularscale: (
   base: 1em,
   ratio: 1.25
 );
+
+//TODO: remove unused fonts
