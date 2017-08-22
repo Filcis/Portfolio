@@ -17,6 +17,7 @@ block content
 									h3.project_name= project.name
 									p.project_description= project.shortDescription
 					else
-						.grid-item : p=project.name
+						.grid-item
+							p=project.name
 		else
 			h3.text-muted There are no image galleries yet.

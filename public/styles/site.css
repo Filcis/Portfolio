@@ -607,7 +607,7 @@ main {
   width: 50%; }
   @media only screen and (min-width: 1440px) {
     .grid-sizer {
-      width: 25%; } }
+      width: 10%; } }
 
 .flexbox .grid {
   display: flex;
@@ -623,7 +623,10 @@ main {
       width: 50%; } }
   @media only screen and (min-width: 1440px) {
     .grid-item {
-      width: 25%; } }
+      width: 20%; } }
+
+.grid-item.size2 {
+  width: 30%; }
 
 .flexbox .grid-item {
   flex-grow: 1; }
