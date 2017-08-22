@@ -12,7 +12,7 @@ exports = module.exports = function (req, res) {
 	locals.categories = 'brak kategorii';
 
 	// Load the galleries by sortOrder
-	view.query('projects', keystone.list('Project').model.find().populate('categories').sort('sortOrder'));
+	view.query('projects', keystone.list('Project').model.find().populate('categories').sort('-createdDate'));
 
 	// Render the view
 	view.render('index');

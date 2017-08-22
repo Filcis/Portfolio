@@ -31,7 +31,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		var q = keystone.list('Project').model.find()
-			.sort('-publishedDate')
+			.sort('-createdDate')
 			.populate('categories');
 
 		if (locals.category) {
