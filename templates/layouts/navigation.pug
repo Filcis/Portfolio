@@ -12,7 +12,7 @@ header.left_sidebar
 				each link in navLinks
 					if link.submenu
 						li(class= 'dropdown')
-							a(class='dropdown_toggle', href="#", aria-expanded='false')=link.label
+							a(class='dropdown_toggle closed', href="#", aria-expanded='false')=link.label
 							ul(class='dropdown_menu' + (section == 'project' ? ' open' : ''))
 								each element in link.submenu
 									li 

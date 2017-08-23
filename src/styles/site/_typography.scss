@@ -105,6 +105,12 @@ nav ul {
   p {
     margin: 0;
   }
+  &:after {
+    content: ' -';
+  }
+  &.closed:after {
+    content: ' +';
+  }
 }
 
 .navbar-toggle {

@@ -30,23 +30,16 @@
     [].forEach.call(submenuToggle, function (toggle) {
       toggle.addEventListener('click', function () {
         var submenu = mainNavigation.querySelector('.dropdown_menu');
-        var arrow = mainNavigation.querySelector('.arrow_right');
         submenu.classList.toggle('open');
-        arrow.classList.toggle('open');
+        toggle.classList.toggle('closed');
       });
-    });
-
-    var toggleMenuButton = document.getElementById('toggleMenuButton');
-    toggleMenuButton.addEventListener("click", function (e) {
-      e.preventDefault();
-      var navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
-      navbarCollapse.classList.toggle('collapse');
     });
   }
 
   var grid = document.querySelector('.grid');
 
   initNav();
+
   // initialise Masonry and image functions when images are loaded
   imagesLoaded(grid, function () {
     resizeGridItems();
