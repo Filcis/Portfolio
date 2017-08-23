@@ -629,6 +629,12 @@ main {
     .grid-item {
       width: 20%; } }
 
+.no-js .grid-item {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  vertical-align: top; }
+
 .grid-item.size2 {
   width: 30%; }
 
