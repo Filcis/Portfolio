@@ -43,12 +43,29 @@ body {
 	background-color: $page_background;
 }
 
-header{
+header {
 	width: 100%;
 }
 
 .logo_wrapper {
 	margin: 0 auto;
+	width: 100%;
+	padding: 1em;
+	// @include mq('tablet-wide') {
+	// 	padding: 1em;
+	// }
+	.logo {
+		float: left;
+		@include mq('tablet-wide') {
+			float: none;
+		}
+	}
+	.hamburger {
+		float: right;
+		@include mq('tablet-wide') {
+			float: none;
+		}
+	}
 }
 
 #footer {
@@ -79,7 +96,13 @@ main {
 }
 
 .grid-sizer {
-	width: 50%;
+	width: 100%;
+	@include mq('tablet-small') {
+			width: 50%;
+		}
+		@include mq('tablet-wide') {
+				width: 33%;
+			}
 	@include mq('desktop-wide') { width: 10%; }
 }
 
@@ -87,13 +110,30 @@ main {
 	box-sizing: border-box;
 	margin-bottom: 15px;
 	padding: 1em;
+	width: 100%;
 	// position: relative;
-	@include mq('phone-wide') {
+	@include mq('tablet-small') {
 			width: 50%;
+		}
+	@include mq('tablet-wide') {
+			width: 33%;
 		}
 	@include mq('desktop-wide') {
       width: 20%;
     }
+}
+
+.grid-item.size2 {
+	width: 100%;
+	@include mq('tablet-small') {
+			width: 50%;
+		}
+	@include mq('tablet-wide') {
+			width: 33%;
+		}
+		@include mq('desktop-wide') {
+	      width: 30%;
+	    }
 }
 
 .no-js .grid-item {
@@ -101,10 +141,6 @@ main {
 	display: inline-block;
 	margin: auto;
 	vertical-align: top;
-}
-
-.grid-item.size2 {
-	width: 30%;
 }
 
 .grid-item img {

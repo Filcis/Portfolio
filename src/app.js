@@ -1,4 +1,4 @@
-(function(){
+(function(window, document, undefined){
 
   function resizeGridItems () {
     // Select all masonry grid items into NodeList gridItems
@@ -23,6 +23,7 @@
 
   //NAVIGATION
   function initNav() {
+
       const mainNavigation = document.getElementById('main_nav');
       const submenuToggle = mainNavigation.querySelectorAll('.dropdown_toggle');
 
@@ -34,12 +35,16 @@
         });
       });
 
-      const toggleMenuButton = document.getElementById('toggleMenuButton');
+      // +- button
+      let toggleMenuButton = document.getElementById('toggleMenuButton');
       toggleMenuButton.addEventListener("click", function(e){
         e.preventDefault();
         const navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
         navbarCollapse.classList.toggle('collapse');
+        toggleMenuButton.classList.toggle('is-active');
       });
+
+
   }
 
  var grid = document.querySelector('.grid');
@@ -51,4 +56,4 @@ imagesLoaded( grid, function() {
   initMasonry();
 });
 
-})();
+})(window, document);

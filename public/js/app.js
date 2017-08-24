@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function (window, document, undefined) {
 
   function resizeGridItems() {
     // Select all masonry grid items into NodeList gridItems
@@ -25,6 +25,7 @@
 
   //NAVIGATION
   function initNav() {
+
     var mainNavigation = document.getElementById('main_nav');
     var submenuToggle = mainNavigation.querySelectorAll('.dropdown_toggle');
 
@@ -36,11 +37,13 @@
       });
     });
 
+    // +- button
     var toggleMenuButton = document.getElementById('toggleMenuButton');
     toggleMenuButton.addEventListener("click", function (e) {
       e.preventDefault();
       var navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
       navbarCollapse.classList.toggle('collapse');
+      toggleMenuButton.classList.toggle('is-active');
     });
   }
 
@@ -52,4 +55,4 @@
     resizeGridItems();
     initMasonry();
   });
-})();
+})(window, document);
