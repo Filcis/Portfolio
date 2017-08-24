@@ -83,12 +83,6 @@ main {
 	@include mq('desktop-wide') { width: 10%; }
 }
 
-.flexbox .grid {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
 .grid-item {
 	box-sizing: border-box;
 	margin-bottom: 15px;
@@ -113,10 +107,6 @@ main {
 	width: 30%;
 }
 
-.flexbox .grid-item {
-	flex-grow: 1;
-}
-
 .grid-item img {
     display: block;
     max-width: 100%;
@@ -134,18 +124,23 @@ main {
 	background-color: #fff;
 	visibility: hidden;
   opacity: 0;
+	border: 3px solid #383c4f;
   transition: visibility 0.25s, opacity 0.25s ease-out;
 	& > * {
 		color: #777;
 	}
 }
 
-.project_info_container .project_name {
+.project_name {
+	margin-top: 1.5em;
+}
+
+.project_info_container .project_name h3 {
 	padding-bottom: 0.35em;
 	display: inline;
 }
 
-.cssgradients .project_info_container .project_name {
+.cssgradients .project_info_container .project_name h3 {
 	background-image: linear-gradient(to right,  $underline 100%, transparent 0%);
 	background-position: 0 1.35em;
 	background-repeat: no-repeat;
@@ -154,7 +149,7 @@ main {
 	border-bottom: 0;
 }
 
-.cssgradients .grid-item:hover .project_name {
+.cssgradients .grid-item:hover .project_name h3 {
 	background-size: 100% 3px;
 }
 
@@ -162,14 +157,25 @@ main {
 	font-size: 0.9em;
 	position: absolute;
 	bottom: 0;
+	left: 0;
+	padding-left: 2em;
+	padding-right: 2em;
 	color: #777;
 }
 .project_categories {
-	font-size: 0.9em;
 	position: absolute;
 	top: 1em;
 	right: 1em;
-	color: #777;
+	span {
+		margin-left: 1em;
+		font-size: 0.75em;
+		color: #777;
+		border: 1px solid #ccc;
+		padding: 0.5em;
+		&:first {
+			margin-left: 0;
+		}
+	}
 }
 
 .grid-item:hover {

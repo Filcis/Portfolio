@@ -1,0 +1,17 @@
+each project, index in projects
+  if project.heroImage.exists
+    .grid-item
+      a(href='/projekt/' + project.key)
+        img(src=project._.heroImage.limit(900,900) alt=project.name).img-rounded
+        .project_info_container
+          if project.categories.length
+            .project_categories
+              each category in project.categories
+                span=category.name
+          .project_name
+            h3=project.name
+          if project.shortDescription.length
+            p.project_description= project.shortDescription
+  else
+    .grid-item
+      p=project.name
