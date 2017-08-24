@@ -14,6 +14,7 @@
   }
 
   function initMasonry() {
+    var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
       itemSelector: '.grid-item',
       percentPosition: true,
@@ -34,16 +35,21 @@
         toggle.classList.toggle('closed');
       });
     });
+
+    var toggleMenuButton = document.getElementById('toggleMenuButton');
+    toggleMenuButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      var navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
+      navbarCollapse.classList.toggle('collapse');
+    });
   }
 
   var grid = document.querySelector('.grid');
 
   initNav();
 
-  // initialise Masonry and image functions when images are loaded
   imagesLoaded(grid, function () {
     resizeGridItems();
     initMasonry();
   });
-
 })();

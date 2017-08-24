@@ -29,9 +29,8 @@
       [].forEach.call(submenuToggle, (toggle) => {
           toggle.addEventListener('click', function() {
           const submenu = mainNavigation.querySelector('.dropdown_menu');
-          const arrow = mainNavigation.querySelector('.arrow_right');
           submenu.classList.toggle('open');
-          arrow.classList.toggle('open');
+          toggle.classList.toggle('closed');
         });
       });
 
@@ -43,7 +42,9 @@
       });
   }
 
-    initNav();
+ var grid = document.querySelector('.grid');
+
+initNav();
 
 imagesLoaded( grid, function() {
   resizeGridItems();
