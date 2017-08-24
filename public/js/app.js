@@ -1,10 +1,21 @@
 'use strict';
 
+// Local variables are faster to resolve than the global variables
 (function (window, document, undefined) {
 
+  /**
+  * Selectors
+  */
+
+  var grid = document.querySelector('.grid');
+  var gridItems = document.querySelectorAll('.grid-item');
+  var mainNavigation = document.getElementById('main_nav');
+  //parents of collapsible submenus
+  var dropdown = mainNavigation.querySelectorAll('.dropdown_toggle');
+  var submenu = mainNavigation.querySelector('.dropdown_menu');
+  var hamburger = document.getElementById('toggleMenuButton');
+
   function resizeGridItems() {
-    // Select all masonry grid items into NodeList gridItems
-    var gridItems = document.querySelectorAll('.grid-item');
     // Iterate through all gridItems and add class size2 if they are horizontal
     for (var i = 0; i < gridItems.length; i++) {
       if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
@@ -14,7 +25,6 @@
   }
 
   function initMasonry() {
-    var grid = document.querySelector('.grid');
     var msnry = new Masonry(grid, {
       itemSelector: '.grid-item',
       percentPosition: true,
@@ -25,29 +35,24 @@
 
   //NAVIGATION
   function initNav() {
-
-    var mainNavigation = document.getElementById('main_nav');
-    var submenuToggle = mainNavigation.querySelectorAll('.dropdown_toggle');
-
-    [].forEach.call(submenuToggle, function (toggle) {
-      toggle.addEventListener('click', function () {
-        var submenu = mainNavigation.querySelector('.dropdown_menu');
+    // collapsible nav
+    // TODO: use for loop instead
+    [].forEach.call(dropdown, function (dropdown) {
+      dropdown.addEventListener('click', function () {
         submenu.classList.toggle('open');
-        toggle.classList.toggle('closed');
+        dropdown.setAttribute('aria-expanded', dropdown.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
       });
-    });
-
-    // +- button
-    var toggleMenuButton = document.getElementById('toggleMenuButton');
-    toggleMenuButton.addEventListener("click", function (e) {
-      e.preventDefault();
-      var navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
-      navbarCollapse.classList.toggle('collapse');
-      toggleMenuButton.classList.toggle('is-active');
     });
   }
 
-  var grid = document.querySelector('.grid');
+  function hamburgerToggle(event) {
+    event.preventDefault();
+    mainNavigation.classList.toggle('collapse');
+    hamburger.classList.toggle('is-active');
+  }
+
+  // hamburger EventListener
+  hamburger.addEventListener("click", hamburgerToggle);
 
   initNav();
 

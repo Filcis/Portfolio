@@ -1,59 +1,62 @@
+// Local variables are faster to resolve than the global variables
 (function(window, document, undefined){
 
-  function resizeGridItems () {
-    // Select all masonry grid items into NodeList gridItems
-    let gridItems = document.querySelectorAll('.grid-item');
-    // Iterate through all gridItems and add class size2 if they are horizontal
-    for (let i = 0; i< gridItems.length; i++) {
-      if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
-        gridItems[i].className += ' size2';
-      }
+  /**
+  * Selectors
+  */
+
+  const grid = document.querySelector('.grid');
+  const gridItems = document.querySelectorAll('.grid-item');
+  const mainNavigation = document.getElementById('main_nav');
+  //parents of collapsible submenus
+  const dropdown = mainNavigation.querySelectorAll('.dropdown_toggle');
+  const submenu = mainNavigation.querySelector('.dropdown_menu');
+  const hamburger = document.getElementById('toggleMenuButton');
+
+function resizeGridItems () {
+  // Iterate through all gridItems and add class size2 if they are horizontal
+  for (let i = 0; i< gridItems.length; i++) {
+    if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
+      gridItems[i].className += ' size2';
     }
   }
+}
 
-  function initMasonry () {
-    const grid = document.querySelector('.grid');
-    const msnry = new Masonry( grid, {
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      // basic grid column module
-      columnWidth: '.grid-sizer',
+function initMasonry () {
+  const msnry = new Masonry( grid, {
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    // basic grid column module
+    columnWidth: '.grid-sizer',
+  });
+}
+
+//NAVIGATION
+function initNav() {
+  // collapsible nav
+  // TODO: use for loop instead
+  [].forEach.call(dropdown, (dropdown) => {
+      dropdown.addEventListener('click', function() {
+      submenu.classList.toggle('open');
+      dropdown.setAttribute('aria-expanded', dropdown.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
     });
-  }
+  });
+}
 
-  //NAVIGATION
-  function initNav() {
+function hamburgerToggle(event){
+  event.preventDefault();
+  mainNavigation.classList.toggle('collapse');
+  hamburger.classList.toggle('is-active');
+}
 
-      const mainNavigation = document.getElementById('main_nav');
-      const submenuToggle = mainNavigation.querySelectorAll('.dropdown_toggle');
-
-      [].forEach.call(submenuToggle, (toggle) => {
-          toggle.addEventListener('click', function() {
-          const submenu = mainNavigation.querySelector('.dropdown_menu');
-          submenu.classList.toggle('open');
-          toggle.classList.toggle('closed');
-        });
-      });
-
-      // +- button
-      let toggleMenuButton = document.getElementById('toggleMenuButton');
-      toggleMenuButton.addEventListener("click", function(e){
-        e.preventDefault();
-        const navbarCollapse = mainNavigation.querySelector('.navbar-collapse');
-        navbarCollapse.classList.toggle('collapse');
-        toggleMenuButton.classList.toggle('is-active');
-      });
-
-
-  }
-
- var grid = document.querySelector('.grid');
+// hamburger EventListener
+hamburger.addEventListener("click", hamburgerToggle);
 
 initNav();
 
 imagesLoaded( grid, function() {
-  resizeGridItems();
-  initMasonry();
+resizeGridItems();
+initMasonry();
 });
 
 })(window, document);

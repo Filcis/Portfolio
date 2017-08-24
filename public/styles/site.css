@@ -560,10 +560,10 @@ nav ul {
   position: relative; }
   .dropdown_toggle p {
     margin: 0; }
-  .dropdown_toggle:after {
-    content: ' -'; }
-  .dropdown_toggle.closed:after {
+  .dropdown_toggle[aria-expanded=false]:after {
     content: ' +'; }
+  .dropdown_toggle[aria-expanded=true]:after {
+    content: ' -'; }
 
 .navbar-toggle {
   float: right; }
@@ -571,10 +571,10 @@ nav ul {
     .navbar-toggle {
       display: none; } }
 
-.navbar-collapse.collapse {
+.collapse .navbar-collapse {
   display: none; }
   @media only screen and (min-width: 1024px) {
-    .navbar-collapse.collapse {
+    .collapse .navbar-collapse {
       display: block; } }
 
 html {
