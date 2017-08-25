@@ -4,8 +4,9 @@ block content
     if project
       header
         h1.project_name= project.name
-        section!= project.description
-      img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded
+      .project_description
+        img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded
+        p!= project.description
       if project.images.length
         .project_gallery
           each img, index in project.images

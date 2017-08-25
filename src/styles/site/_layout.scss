@@ -78,11 +78,6 @@ header {
 main {
 	max-width: 900px;
 	img {
-		width: 90%;
-		max-width: 800px;
-		margin: 5%;
-		padding: 1em;
-		background-color: #fff;
 		height: auto;
 	}
 }
@@ -189,7 +184,7 @@ main {
 	background-size: 100% 3px;
 }
 
-.project_description {
+.project_card_description {
 	font-size: 0.9em;
 	position: absolute;
 	bottom: 0;
@@ -220,7 +215,7 @@ main {
   opacity: 1;
 	}
 }
-
+//screen reader info
 .sr-only {
 	position:absolute;
 	left:-10000px;
@@ -228,4 +223,9 @@ main {
 	width:1px;
 	height:1px;
 	overflow:hidden;
+}
+
+.heroImage {
+	max-width: 40%;
+	float: left;
 }

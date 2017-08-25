@@ -21,6 +21,7 @@ view.on('init', function(next) {
 		}
 		else {
 			locals.project = results;
+			console.log(locals.project);
 		}
   next(err);
   });

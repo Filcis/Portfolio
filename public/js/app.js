@@ -17,9 +17,11 @@
 
   function resizeGridItems() {
     // Iterate through all gridItems and add class size2 if they are horizontal
-    for (var i = 0; i < gridItems.length; i++) {
-      if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
-        gridItems[i].className += ' size2';
+    if (gridItems.length) {
+      for (var i = 0; i < gridItems.length; i++) {
+        if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
+          gridItems[i].className += ' size2';
+        }
       }
     }
   }
@@ -56,8 +58,10 @@
 
   initNav();
 
-  imagesLoaded(grid, function () {
-    resizeGridItems();
-    initMasonry();
-  });
+  if (grid) {
+    imagesLoaded(grid, function () {
+      resizeGridItems();
+      initMasonry();
+    });
+  }
 })(window, document);
