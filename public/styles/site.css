@@ -22,7 +22,8 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
 
 /**
  * Add the correct display in IE 9-.
@@ -494,7 +495,7 @@ a {
     padding-bottom: 1em; }
 
 h1, h2, h3, h4, h5 {
-  font-weight: "Roboto", sans-serif;
+  font-weight: normal;
   font-family: "Roboto", sans-serif; }
 
 h1 {
@@ -557,7 +558,9 @@ nav ul {
   max-height: 300px; }
 
 .dropdown_toggle {
-  position: relative; }
+  position: relative;
+  color: #e15340;
+  font-weight: bold; }
   .dropdown_toggle p {
     margin: 0; }
   .dropdown_toggle[aria-expanded=false]:after {
@@ -598,7 +601,7 @@ body {
 
 @media only screen and (min-width: 1024px) {
   .left_sidebar {
-    padding-top: 3em;
+    padding-top: 1.5em;
     position: fixed;
     left: 0;
     top: 0;
@@ -611,8 +614,15 @@ body {
   background-color: #f4f7f6; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
-      margin-left: 250px;
-      padding: 3em 5em 2em 5em; } }
+      margin-left: 250px; } }
+  .content-wrapper header {
+    background-color: #f4f7f6;
+    padding: 2em 3em 0em 3em; }
+    .content-wrapper header h1 {
+      width: 100%; }
+
+.container {
+  padding: 0 2em; }
 
 header {
   width: 100%; }
@@ -625,7 +635,11 @@ header {
     float: left; }
     @media only screen and (min-width: 1024px) {
       .logo_wrapper .logo {
-        float: none; } }
+        float: none;
+        width: 100%; }
+        .logo_wrapper .logo img {
+          margin: 0 auto;
+          display: block; } }
   .logo_wrapper .hamburger {
     float: right; }
     @media only screen and (min-width: 1024px) {
@@ -645,7 +659,7 @@ main {
 
 @media only screen and (min-width: 1440px) {
   .grid {
-    margin-top: 3em; } }
+    margin-top: 1em; } }
 
 .grid-sizer {
   width: 100%; }
@@ -657,11 +671,10 @@ main {
       width: 33%; } }
   @media only screen and (min-width: 1440px) {
     .grid-sizer {
-      width: 10%; } }
+      width: 33%; } }
 
 .grid-item {
   box-sizing: border-box;
-  margin-bottom: 15px;
   padding: 1em;
   width: 100%; }
   @media only screen and (min-width: 640px) {
@@ -672,19 +685,7 @@ main {
       width: 33%; } }
   @media only screen and (min-width: 1440px) {
     .grid-item {
-      width: 20%; } }
-
-.grid-item.size2 {
-  width: 100%; }
-  @media only screen and (min-width: 640px) {
-    .grid-item.size2 {
-      width: 50%; } }
-  @media only screen and (min-width: 1024px) {
-    .grid-item.size2 {
       width: 33%; } }
-  @media only screen and (min-width: 1440px) {
-    .grid-item.size2 {
-      width: 30%; } }
 
 .no-js .grid-item {
   position: relative;
@@ -766,5 +767,5 @@ main {
   overflow: hidden; }
 
 .heroImage {
-  max-width: 40%;
-  float: left; }
+  max-width: 100%;
+  display: block; }

@@ -17,7 +17,7 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: $headline_font;
+  font-weight: $headline_weight;
 	font-family: $headline_font;
 }
 
@@ -103,6 +103,8 @@ nav ul {
 
 .dropdown_toggle {
   position: relative;
+  color: $dropdown_toggle;
+  font-weight: bold;
   p {
     margin: 0;
   }

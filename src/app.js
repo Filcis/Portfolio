@@ -13,16 +13,16 @@
   const submenu = mainNavigation.querySelector('.dropdown_menu');
   const hamburger = document.getElementById('toggleMenuButton');
 
-function resizeGridItems () {
-  // Iterate through all gridItems and add class size2 if they are horizontal
-  if (gridItems.length) {
-    for (let i = 0; i< gridItems.length; i++) {
-      if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
-        gridItems[i].className += ' size2';
-      }
-    }
-  }
-}
+// function resizeGridItems () {
+//   // Iterate through all gridItems and add class size2 if they are horizontal
+//   if (gridItems.length) {
+//     for (let i = 0; i< gridItems.length; i++) {
+//       if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
+//         gridItems[i].className += ' size2';
+//       }
+//     }
+//   }
+// }
 
 function initMasonry () {
   const msnry = new Masonry( grid, {
@@ -58,7 +58,7 @@ initNav();
 
 if (grid) {
   imagesLoaded( grid, function() {
-  resizeGridItems();
+  // resizeGridItems();
   initMasonry();
   });
 }

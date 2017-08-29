@@ -15,16 +15,16 @@
   var submenu = mainNavigation.querySelector('.dropdown_menu');
   var hamburger = document.getElementById('toggleMenuButton');
 
-  function resizeGridItems() {
-    // Iterate through all gridItems and add class size2 if they are horizontal
-    if (gridItems.length) {
-      for (var i = 0; i < gridItems.length; i++) {
-        if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
-          gridItems[i].className += ' size2';
-        }
-      }
-    }
-  }
+  // function resizeGridItems () {
+  //   // Iterate through all gridItems and add class size2 if they are horizontal
+  //   if (gridItems.length) {
+  //     for (let i = 0; i< gridItems.length; i++) {
+  //       if (gridItems[i].clientWidth > gridItems[i].clientHeight) {
+  //         gridItems[i].className += ' size2';
+  //       }
+  //     }
+  //   }
+  // }
 
   function initMasonry() {
     var msnry = new Masonry(grid, {
@@ -60,7 +60,7 @@
 
   if (grid) {
     imagesLoaded(grid, function () {
-      resizeGridItems();
+      // resizeGridItems();
       initMasonry();
     });
   }
