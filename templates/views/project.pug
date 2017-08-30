@@ -4,12 +4,13 @@ block content
     if project
       header
         h1.project_name= project.name
-      .project_description
-        p!= project.description
-        img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded
-      if project.images.length
+      .container
+        .project_description
+          p!= project.description
         .project_gallery
-          each img, index in project.images
-            img(src=img.limit(1200,1200) alt=project.name title='obrazek ' + (index + 1)).img-rounded
+          img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded
+          if project.images.length
+            each img, index in project.images
+              img(src=img.limit(1200,1200) alt=project.name title='obrazek ' + (index + 1)).img-rounded
     else
       h1 nie ma takiego projektu

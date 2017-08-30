@@ -1,3 +1,4 @@
+// PALETA
 $old_tomato : #8C271E;
 $tomato : #e15340;
 $ivory: #CFCBCA;
@@ -5,11 +6,13 @@ $heban: #22181C;
 $gray: #2d2d2d;
 $coldgray: #f4f7f6;
 $white: #FFF;
+$blue: #567bf5;
 
-$underline: $tomato;
+$underline: $blue;
 $links: #2d2d2d;
-$page_background: $coldgray;
+$page_background: $white;
 $sidebar_background: $white;
-$border: $ivory;
-$mainheader: $coldgray;
-$dropdown_toggle: $tomato;
+$border: $blue;
+$mainheader: $white;
+$dropdown_toggle: $blue;
+$project_info_container--border: $blue;

@@ -37,14 +37,18 @@ p, a {
   font-size: ms(0);
 }
 
-.page_name, .category_name {
+.page_name, .category_name, .project_name {
 color: #444;
 display: inline-block;
+margin-bottom: 0.25em;
 }
 
-.project_name {
-	display: inline-block;
-	line-height: 1.5;
+
+.project_description {
+  border-top: 1px solid $border;
+  font-size: ms(1);
+  color: $blue;
+  width: 400px;
 }
 
 // no css gradients backup

@@ -43,17 +43,19 @@ body {
 	background-color: $page_background;
 	header {
 		background-color: $mainheader;
-		padding: 2em 3em 0em 3em;
+		padding: 1.5em 3em 0em 3em;
 		h1 {
 			width: 100%;
-			// text-align: center;
 		}
 	}
 }
 
-// TODO: container is too generic name
-.container {
+.grid_holder {
 	padding: 0 2em;
+}
+
+.container {
+	padding: 0 3em;
 }
 
 header {
@@ -93,13 +95,6 @@ header {
 	color: #777777;
 }
 
-main {
-	max-width: 900px;
-	img {
-		height: auto;
-	}
-}
-
 // Grid Masonry dla projektów
 
 .grid {
@@ -114,7 +109,7 @@ main {
 			width: 50%;
 		}
 		@include mq('tablet-wide') {
-				width: 33%;
+				width: 50%;
 			}
 	@include mq('desktop-wide') { width: 33%;
 	}
@@ -130,7 +125,7 @@ main {
 			width: 50%;
 		}
 	@include mq('tablet-wide') {
-			width: 33%;
+			width: 50%;
 		}
 	@include mq('desktop-wide') {
       width: 33%;
@@ -161,15 +156,11 @@ main {
 	background-color: #fff;
 	visibility: hidden;
   opacity: 0;
-	border: 3px solid #383c4f;
+	border: 6px solid $project_info_container--border;
   transition: visibility 0.25s, opacity 0.25s ease-out;
 	& > * {
 		color: #777;
 	}
-}
-
-.project_name {
-	margin-top: 1.5em;
 }
 
 .project_info_container .project_name h3 {
@@ -181,13 +172,13 @@ main {
 	background-image: linear-gradient(to right,  $underline 100%, transparent 0%);
 	background-position: 0 1.35em;
 	background-repeat: no-repeat;
-	background-size: 0% 3px;
+	background-size: 0% 5px;
 	transition: background-size 0.45s ease;
 	border-bottom: 0;
 }
 
 .cssgradients .grid-item:hover .project_name h3 {
-	background-size: 100% 3px;
+	background-size: 100% 5px;
 }
 
 .project_card_description {
@@ -213,6 +204,14 @@ main {
 			margin-left: 0;
 		}
 	}
+}
+
+.project_gallery {
+	max-width: 900px;
+	@include mq('desktop-wide') {
+		max-width: 1080px;
+	}
+	margin: 3em auto;
 }
 
 .grid-item:hover {
