@@ -48,7 +48,12 @@ margin-bottom: 0.25em;
   border-top: 1px solid $border;
   font-size: ms(1);
   color: $blue;
-  width: 400px;
+  width: 70%;
+  margin: 0 auto;
+  @include mq('tablet-wide') {
+    width: 400px;
+    margin: 0;
+  }
 }
 
 // no css gradients backup

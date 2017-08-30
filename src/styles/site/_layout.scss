@@ -23,6 +23,8 @@ body {
 }
 
 .left_sidebar {
+	background-color: $sidebar_background--mobile;
+	padding: 0 1em;
 	@include mq('tablet-wide') {
 		padding-top: 1.5em;
 		position: fixed;
@@ -45,7 +47,11 @@ body {
 		background-color: $mainheader;
 		padding: 1.5em 3em 0em 3em;
 		h1 {
+			text-align: center;
 			width: 100%;
+			@include mq('tablet-wide') {
+				text-align: left;
+			}
 		}
 	}
 }
