@@ -515,14 +515,16 @@ p, a {
   display: inline-block;
   margin-bottom: 0.25em; }
 
-.project_description {
+.project_description,
+.about {
   border-top: 1px solid #567bf5;
   font-size: 1.25em;
   color: #567bf5;
   width: 70%;
   margin: 0 auto; }
   @media only screen and (min-width: 1024px) {
-    .project_description {
+    .project_description,
+    .about {
       width: 400px;
       margin: 0; } }
 
@@ -589,15 +591,13 @@ nav ul {
       display: block; } }
 
 form {
-  margin: 2em auto;
-  padding: 1.5em;
+  margin: 0 auto;
+  padding-top: 1.5em;
   width: 100%;
-  border-radius: 12px;
-  border: 1px solid #567bf5; }
+  border-top: 1px solid #567bf5; }
   @media only screen and (min-width: 1024px) {
     form {
-      margin: 2em 0 0 0;
-      padding: 3em;
+      margin: 0;
       width: 35em; } }
   form label {
     width: 100%;
@@ -620,9 +620,10 @@ form {
     padding: 1em; }
   form button[type=submit] {
     margin-top: 2em;
-    width: 100%;
-    line-height: 2.5em;
-    border-radius: 1em;
+    display: block;
+    min-width: 40%;
+    height: 2.5em;
+    border-radius: 0.5em;
     background-color: #567bf5;
     border: 0;
     color: #f2f2f2;
@@ -681,9 +682,6 @@ body {
 
 .container {
   padding: 0 3em; }
-
-.container.contact_form {
-  margin-top: 3em; }
 
 header {
   width: 100%; }
