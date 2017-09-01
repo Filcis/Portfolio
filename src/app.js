@@ -62,5 +62,4 @@ if (grid) {
   initMasonry();
   });
 }
-
 })(window, document);

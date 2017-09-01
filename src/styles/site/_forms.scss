@@ -1,4 +1,48 @@
 form {
-  width: 80%;
-  max-width: 800px;
+  margin: 2em auto;
+  padding: 1.5em;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid $form--border;
+  @include mq('tablet-wide') {
+    margin: 2em 0 0 0;
+    padding: 3em;
+    width: 35em;
+  }
+
+  label {
+    width: 100%;
+    display: inline-block;
+    color: $form_label--color;
+    font-size: 0.85em;
+    margin-bottom: 0.7em;
+  }
+
+  textarea {
+    min-width: 100%;
+    max-width: 100%;
+    background-color: $input_background;
+    border: 0px;
+    padding: 1em;
+  }
+
+  input {
+    width: 100%;
+    height: 2.8em;
+    margin-bottom: 1em;
+    background-color: $input_background;
+    border: 0;
+    padding: 1em;
+  }
+
+  button[type=submit] {
+    margin-top: 2em;
+    width: 100%;
+    line-height: 2.5em;
+    border-radius: 1em;
+    background-color: $form_submit;
+    border: 0;
+    color: #f2f2f2;
+    cursor: pointer;
+  }
 }
