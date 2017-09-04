@@ -18,7 +18,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'pug',
-
+	'mongo': 'process.env.MONGO_URI || "mongodb://localhost/fc_portfolio"'
 	'emails': 'templates/emails',
 
 	'auto update': true,
