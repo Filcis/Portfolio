@@ -56,12 +56,9 @@ body {
 	}
 }
 
-.grid_holder {
-	padding: 0 2em;
-}
-
 .container {
 	padding: 0 3em;
+	margin-bottom: 6em;
 }
 
 header {
@@ -102,6 +99,10 @@ header {
 }
 
 // Grid Masonry dla projektów
+
+.grid_holder {
+	padding: 0 2em;
+}
 
 .grid {
 	@include mq('desktop-wide') {

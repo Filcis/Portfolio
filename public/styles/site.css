@@ -531,6 +531,10 @@ p, a {
 .project_name h3 {
   border-bottom: 2px solid #567bf5; }
 
+h2.additional_projects_headline {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e0dfe2; }
+
 .category_highlight {
   border-left: 1px solid #aaa;
   padding-left: 0.3em; }
@@ -649,7 +653,7 @@ body {
   min-height: 100%; }
 
 .left_sidebar {
-  background-color: #f4f7f6;
+  background-color: #e0dfe2;
   padding: 0 1em; }
   @media only screen and (min-width: 1024px) {
     .left_sidebar {
@@ -677,11 +681,9 @@ body {
         .content-wrapper header h1 {
           text-align: left; } }
 
-.grid_holder {
-  padding: 0 2em; }
-
 .container {
-  padding: 0 3em; }
+  padding: 0 3em;
+  margin-bottom: 6em; }
 
 header {
   width: 100%; }
@@ -710,6 +712,9 @@ header {
   border-top: 1px solid #eeeeee;
   padding-top: 30px;
   color: #777777; }
+
+.grid_holder {
+  padding: 0 2em; }
 
 @media only screen and (min-width: 1440px) {
   .grid {

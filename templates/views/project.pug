@@ -14,3 +14,12 @@ block content
               img(src=img.limit(1200,1200) alt=project.name title='obrazek ' + (index + 1)).img-rounded
     else
       h1 nie ma takiego projektu
+    .container
+      h2.additional_projects_headline Najnowsze projekty z kategorii
+        each category in categoriesNames
+          span.categorylinks
+            a(href='/kategorie/' + category rel='tag')=' ' + category
+      if projects.length
+        .grid
+          .grid-sizer
+            include grid_item
