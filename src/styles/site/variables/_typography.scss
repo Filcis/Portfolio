@@ -22,4 +22,11 @@ $modularscale: (
   ratio: 1.25
 );
 
+html {
+  font-size: 0.8em;
+  @include mq('tablet-small') {
+    font-size: 1em;
+  }
+}
+
 //TODO: remove unused fonts

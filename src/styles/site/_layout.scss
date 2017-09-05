@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	height: 100%;
+	min-height: 100%;
 }
 
 .page-wrapper {
@@ -41,7 +41,6 @@ body {
 		margin-left: 250px;
 		// padding: 3em 5em 2em 5em;
 	}
-	min-height: 100%;
 	background-color: $page_background;
 	header {
 		background-color: $mainheader;
@@ -57,8 +56,12 @@ body {
 }
 
 .container {
-	padding: 0 3em;
-	margin-bottom: 6em;
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	@include mq('tablet-wide') {
+		padding: 0 3em;
+		margin-bottom: 6em;
+	}
 }
 
 header {
@@ -78,6 +81,7 @@ header {
 			float: none;
 			width: 100%;
 			img{
+				min-width: 15%;
 				margin: 0 auto;
 				display: block;
 			}
@@ -92,10 +96,11 @@ header {
 }
 
 #footer {
-	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+	color: #000;
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
 }
 
 // Grid Masonry dla projektów
@@ -124,11 +129,11 @@ header {
 
 .grid-item {
 	box-sizing: border-box;
-	// margin-bottom: 15px;
-	padding: 1em;
+	padding-bottom: 1em;
 	width: 100%;
 	// position: relative;
 	@include mq('tablet-small') {
+			padding: 1em;
 			width: 50%;
 		}
 	@include mq('tablet-wide') {
@@ -152,6 +157,8 @@ header {
     height: auto;
 }
 
+//TODO: more responsive descriptions
+// info about each project
 .project_info_container {
 	padding: 2em;
 	box-sizing: border-box;
@@ -167,6 +174,13 @@ header {
   transition: visibility 0.25s, opacity 0.25s ease-out;
 	& > * {
 		color: #777;
+	}
+}
+
+.grid-item:hover {
+	.project_info_container {
+	visibility: visible;
+  opacity: 1;
 	}
 }
 
@@ -219,13 +233,6 @@ header {
 		max-width: 1080px;
 	}
 	margin: 3em auto;
-}
-
-.grid-item:hover {
-	.project_info_container {
-	visibility: visible;
-  opacity: 1;
-	}
 }
 //screen reader info
 .sr-only {

@@ -480,6 +480,12 @@ template {
   transform: rotate(-90deg);
   transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
+html {
+  font-size: 0.8em; }
+  @media only screen and (min-width: 640px) {
+    html {
+      font-size: 1em; } }
+
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.6; }
@@ -487,6 +493,21 @@ body {
 a {
   color: #2d2d2d;
   text-decoration: none; }
+
+.categorylinks a {
+  color: #567bf5; }
+  @media only screen and (min-width: 640px) {
+    .categorylinks a {
+      margin-left: 1em;
+      font-size: 0.75em;
+      color: #777;
+      border: 1px solid #ccc;
+      padding: 0.5em; }
+      .categorylinks a:first {
+        margin-left: 0; }
+      .categorylinks a:hover {
+        background-color: #567bf5;
+        color: white; } }
 
 .logo {
   display: block; }
@@ -519,9 +540,12 @@ p, a {
 .about {
   border-top: 1px solid #567bf5;
   font-size: 1.25em;
-  color: #567bf5;
-  width: 70%;
-  margin: 0 auto; }
+  color: #567bf5; }
+  @media only screen and (min-width: 640px) {
+    .project_description,
+    .about {
+      width: 70%;
+      margin: 0 auto; } }
   @media only screen and (min-width: 1024px) {
     .project_description,
     .about {
@@ -532,11 +556,13 @@ p, a {
   border-bottom: 2px solid #567bf5; }
 
 h2.additional_projects_headline {
+  margin-top: 0;
+  font-size: 1.25em;
   padding-bottom: 1em;
   border-bottom: 1px solid #e0dfe2; }
 
 .category_highlight {
-  border-left: 1px solid #aaa;
+  border-left: 1px solid #567bf5;
   padding-left: 0.3em; }
 
 nav ul {
@@ -566,7 +592,7 @@ nav ul {
   max-height: 0;
   transition: 0.6s;
   overflow: hidden;
-  background-color: #ced9e3; }
+  background-color: #e6ecfe; }
 
 .dropdown_menu.open {
   max-height: 300px; }
@@ -646,7 +672,7 @@ html {
   clear: both; }
 
 body {
-  height: 100%; }
+  min-height: 100%; }
 
 .page-wrapper {
   position: relative;
@@ -666,7 +692,6 @@ body {
       background-color: #FFF; } }
 
 .content-wrapper {
-  min-height: 100%;
   background-color: #FFF; }
   @media only screen and (min-width: 1024px) {
     .content-wrapper {
@@ -682,8 +707,12 @@ body {
           text-align: left; } }
 
 .container {
-  padding: 0 3em;
-  margin-bottom: 6em; }
+  padding-left: 1.2em;
+  padding-right: 1.2em; }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      padding: 0 3em;
+      margin-bottom: 6em; } }
 
 header {
   width: 100%; }
@@ -699,6 +728,7 @@ header {
         float: none;
         width: 100%; }
         .logo_wrapper .logo img {
+          min-width: 15%;
           margin: 0 auto;
           display: block; } }
   .logo_wrapper .hamburger {
@@ -708,10 +738,11 @@ header {
         float: none; } }
 
 #footer {
-  margin-top: 30px;
   border-top: 1px solid #eeeeee;
-  padding-top: 30px;
-  color: #777777; }
+  color: #000;
+  position: fixed;
+  bottom: 1em;
+  left: 1em; }
 
 .grid_holder {
   padding: 0 2em; }
@@ -734,10 +765,11 @@ header {
 
 .grid-item {
   box-sizing: border-box;
-  padding: 1em;
+  padding-bottom: 1em;
   width: 100%; }
   @media only screen and (min-width: 640px) {
     .grid-item {
+      padding: 1em;
       width: 50%; } }
   @media only screen and (min-width: 1024px) {
     .grid-item {
@@ -772,6 +804,10 @@ header {
   transition: visibility 0.25s, opacity 0.25s ease-out; }
   .project_info_container > * {
     color: #777; }
+
+.grid-item:hover .project_info_container {
+  visibility: visible;
+  opacity: 1; }
 
 .project_info_container .project_name h3 {
   padding-bottom: 0.35em;
@@ -816,10 +852,6 @@ header {
   @media only screen and (min-width: 1440px) {
     .project_gallery {
       max-width: 1080px; } }
-
-.grid-item:hover .project_info_container {
-  visibility: visible;
-  opacity: 1; }
 
 .sr-only {
   position: absolute;
