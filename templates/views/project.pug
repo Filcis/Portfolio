@@ -8,10 +8,10 @@ block content
         .project_description
           p!= project.description
         .project_gallery
-          img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name).img-rounded
+          img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name secure=true).img-rounded
           if project.images.length
             each img, index in project.images
-              img(src=img.limit(1200,1200) alt=project.name title='obrazek ' + (index + 1)).img-rounded
+              img(src=img.limit(1200,1200) secure=true alt=project.name title='obrazek ' + (index + 1)).img-rounded
     else
       h1 nie ma takiego projektu
     .container

@@ -2,7 +2,7 @@ each project, index in projects
   if project.heroImage.exists
     .grid-item
       a(href='/projekt/' + project.key)
-        img(src=project._.heroImage.limit(900, 900) alt=project.name).img-rounded
+        img(src=project._.heroImage.limit(900, 900) alt=project.name secure=true).img-rounded
         .project_info_container
           if project.categories.length
             .project_categories
