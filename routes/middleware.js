@@ -45,6 +45,19 @@ exports.initSubmenu = function (req, res, next) {
 };
 
 /**
+	Redirects all requests to https
+*/
+
+exports.redirectToHttps = function(req, res, next) {
+	if(req.headers.host === 'www.cislakfilip.pl' && req.headers['x-forwarded-proto'] !== 'https') {
+		return res.redirect('https://www.cislakfilip.pl'+req.url);
+	} else if(req.headers.host === 'cislakfilip.pl' && req.headers['x-forwarded-proto'] !== 'https') {
+		return res.redirect('https://cislakfilip.pl'+req.url);
+	}
+	next();
+};
+
+/**
 	Fetches and clears the flashMessages before a view is rendered
 */
 exports.flashMessages = function (req, res, next) {

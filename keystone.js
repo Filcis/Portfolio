@@ -26,8 +26,6 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	//  ssl: "force",
-	// 'ssl port': process.env.SSLPORT || '0.0.0.0',
 });
 
 // Load your project's Models
