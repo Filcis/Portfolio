@@ -233,6 +233,13 @@ header {
 		max-width: 1080px;
 	}
 	margin: 3em auto;
+	img {
+		max-width: 100%;
+		margin-bottom: 3em;
+		@include mq('desktop') {
+			margin-bottom: 6em;
+		}
+	}
 }
 //screen reader info
 .sr-only {

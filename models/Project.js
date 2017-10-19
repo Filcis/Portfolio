@@ -14,6 +14,7 @@ Project.add({
 	name: { type: String, required: true },
 	shortDescription: { type: String, required: false },
 	description: { type: Types.Html, wysiwyg: true },
+	color: {type: Types.Color},
 	publishedDate: { type: Date, default: Date.now },
 	createdDate: { type: Date, default: Date.now },
 	heroImage: { type: Types.CloudinaryImage },

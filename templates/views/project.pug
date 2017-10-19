@@ -6,9 +6,9 @@ block content
         h1.project_name= project.name
       .container
         .project_description
-          p!= project.description
+          p!=project.description
         .project_gallery
-          img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name secure=true).img-rounded
+          //- img.heroImage(src=project._.heroImage.limit(1600,1400) alt=project.name secure=true).img-rounded
           if project.images.length
             each img, index in project.images
               img(src=img.limit(1200,1200) secure=true alt=project.name title='obrazek ' + (index + 1)).img-rounded
