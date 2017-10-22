@@ -49,7 +49,7 @@ keystone.set('cloudinary secure', true);
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-keystone.set('session store', 'mongo');
+// keystone.set('session store', 'mongo');
 
 
 // Configure the navigation bar in Keystone's Admin UI

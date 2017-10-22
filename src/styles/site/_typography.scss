@@ -8,6 +8,18 @@ a {
   text-decoration: none;
 }
 
+.previous {
+  border: 1px solid lightgray;
+  padding: 1em;
+  border-radius: 1em;
+  margin: 0 auto;
+  display: block;
+  max-width: 6em;
+  background-color: $blue;
+  color: #fff;
+  text-align: center;
+}
+
 .categorylinks a {
   color: $blue;
   @include mq('tablet-small') {

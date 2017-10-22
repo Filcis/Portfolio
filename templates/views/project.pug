@@ -15,6 +15,9 @@ block content
     else
       h1 nie ma takiego projektu
     .container
+      a.previous(href='/') powrót
+      p= data.posts
+    .container
       h2.additional_projects_headline Najnowsze projekty z kategorii
         each category in categoriesNames
           span.categorylinks

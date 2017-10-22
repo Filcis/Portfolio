@@ -8,6 +8,7 @@ exports = module.exports = function (req, res) {
 
   locals.data = {
     project: [],
+		posts: []
 };
 
  // Load project
@@ -33,7 +34,7 @@ view.on('init', function (next) {
 	next();
 });
 
-// Load the posts
+// Load the posts of same categories
 	view.on('init', function (next) {
 		var q = keystone.list('Project').model.find({categories: { $in: locals.project.categories } })
 			.sort('-createdDate')
@@ -43,6 +44,7 @@ view.on('init', function (next) {
 			next(err);
 		});
 	});
+
 
 	// Render the view
 	view.render('project');
