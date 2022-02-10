@@ -8,7 +8,7 @@
     "keystone": "^4.2.1",
     "keystone-email": "1.1.0",
     "lodash": "^4.17.15",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "node-sass-middleware": "0.11.0",
     "pug": "2.0.4",
     "validator": "^11.1.0"
